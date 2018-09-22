@@ -1,0 +1,45 @@
+resources:
+
+- name: source-code
+  type: git
+  source:
+    uri: https://github.com/Pivotal-Field-Engineering/s1p-2018-contract-testing.git
+    branch: master
+
+- name: pws
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: {{USERNAME}}
+    password: {{PASSWORD}}
+    organization: {{ORG}}
+    space: {{SPACE}}
+    skip_cert_check: false
+
+jobs:
+
+- name: deploy-person-service
+  plan:
+  - get: source-code
+    trigger: true
+  - task: package
+    file: source-code/ci/tasks/package-person.yml
+  - put: pws
+    params:
+      manifest: source-code/person-service/manifest.yml
+      current_app_name: {{PERSON-SERVICE-APP-NAME}}
+
+- name: deploy-myaccount-client
+  plan:
+  - get: source-code
+    passed:
+    - deploy-person-service
+    trigger: true
+  - task: package
+    file: source-code/ci/tasks/package-myaccount.yml
+  - put: pws
+    params:
+      manifest: source-code/myaccount-client/manifest.yml
+      current_app_name: {{MYACCOUNT-CLIENT-APP-NAME}}
+      environment_variables:
+        personservice: https://{{PERSON-SERVICE-APP-NAME}}.cfapps.io
