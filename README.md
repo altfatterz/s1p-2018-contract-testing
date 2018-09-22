@@ -46,7 +46,7 @@ Feel free to review both BaseClass and the consumer contract using your IDE.
 We are ready to build the app via these commands:
 ```
 cd <YOUR_FOLDER>/s1p-2018-contract-testing/person-service
-mvn clean package
+mvn clean install
 ```
 This picture depicts what happens when you build the app:
 ![build-person-service](build-person-service.png)
@@ -61,7 +61,7 @@ During the same Sprint, the `MyAccount` app has also created a [consumer-driven 
 Let's build the app:
 ```
 cd <YOUR_FOLDER>/s1p-2018-contract-testing/myaccount-client
-mvn clean package
+mvn clean install
 ```
 This picture depicts what happens when you build the app:
 
