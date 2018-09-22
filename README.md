@@ -73,7 +73,7 @@ This picture depicts what happens when you build the app:
 
 ## Service evolution: Change `PersonService` endpoint from `/person` to `/people`
 1) Open your IDE
-1) Find the `findPersonById` method in the [PersonRestController](/person-service/src/main/java/hello/PersonRestController.java) 
+1) Find the `findPersonById` method in the [/person-service/src/main/java/hello/PersonRestController.java class](/person-service/src/main/java/hello/PersonRestController.java) 
 1) Change its annotation from `@GetMapping("/person/{id}")` to `@GetMapping("/people/{id}")`. Save your changes.
 1) Build the `PersonService` app
 1) Was the build successful or it failed? Why?
@@ -82,7 +82,7 @@ This picture depicts what happens when you build the app:
 
 ## Service evolution: Change `Person` schema attribute from `surname` to `lastname`
 1) Open your IDE
-1) Find the [Person class](/person-service/src/main/java/hello/Person.java) 
+1) Find the [/person-service/src/main/java/hello/Person.java class](/person-service/src/main/java/hello/Person.java) 
 1) Use your IDE to replace the `surname` string with `lastname`. Save your changes
 1) Build the `PersonService` app
 1) Was the build successful or it failed? Why?
@@ -118,7 +118,7 @@ Now login to Concourse via the `fly` command-line:
 fly login -t s1p -u test -p test -c http://127.0.0.1:8080
 ```
 
-Customize the Concourse [parameters](ci/params.yml) file with your Pivotal Web Services settings. For example:
+Customize the Concourse [ci/params.yml](ci/params.yml) file with your Pivotal Web Services settings. For example:
 ```
 USERNAME: abc@gmail.com
 PASSWORD: n01d3@
