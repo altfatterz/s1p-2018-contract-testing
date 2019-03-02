@@ -3,7 +3,7 @@ resources:
 - name: source-code
   type: git
   source:
-    uri: https://github.com/Pivotal-Field-Engineering/s1p-2018-contract-testing.git
+    uri: https://github.com/altfatterz/s1p-2018-contract-testing.git
     branch: master
 
 - name: pws
