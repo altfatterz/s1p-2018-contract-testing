@@ -9,7 +9,7 @@ class Person {
 	Person(Long id, String name, String surname) {
 		this.id = id;
 		this.name = name;
-		this.surname = surname;
+		this.lastName = surname;
 	}
 
 	protected Person() {}
@@ -19,7 +19,7 @@ class Person {
 
 	private String name;
 
-	private String surname;
+	private String lastName;
 
 	public Long getId() {
 		return id;
@@ -37,11 +37,11 @@ class Person {
 		this.name = name;
 	}
 
-	public String getsurname() {
-		return surname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setsurname(String surname) {
-		this.surname = surname;
+	public void getLastName(String lastName) {
+		this.lastName = lastName;
 	}
 }
