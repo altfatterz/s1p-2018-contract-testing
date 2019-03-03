@@ -13,7 +13,7 @@ set -e -u -x
 cd source-code/person-service
 ../mvnw clean install
 
-cd source-code/myaccount-client
+cd ../myaccount-client
 ../mvnw clean install
 
 cp target/*.jar ../../build-output/
