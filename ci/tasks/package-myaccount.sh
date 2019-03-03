@@ -13,7 +13,7 @@ echo "Generating the /.m2 symbolic link for /maven cache"
 #cd source-code/person-service
 #../mvnw clean install
 
-cd ../myaccount-client
+cd source-code/myaccount-client
 ../mvnw clean install
 
 cp target/*.jar ../../build-output/
