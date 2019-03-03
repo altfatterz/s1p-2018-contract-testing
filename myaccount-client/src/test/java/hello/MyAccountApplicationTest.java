@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureStubRunner(ids = "com.example.person-service", stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+@AutoConfigureStubRunner(ids = "com.example:person-service", stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 public class MyAccountApplicationTest {
 
 	@Test
