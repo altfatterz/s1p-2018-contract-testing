@@ -32,7 +32,7 @@ class MessageRestController {
 	@RequestMapping("/message/{personId}")
 	String getMessage(@PathVariable("personId") Long personId) {
 		Person person = this.restTemplate.getForObject(myURL.replaceAll("\"", "") + "/person/{personId}", Person.class, personId);
-		return "Hello " + person.getName() + " " + person.getSurname();
+		return "Hello " + person.getName() + " " + person.getLastName();
 	}
 
 }

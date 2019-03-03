@@ -1,11 +1,9 @@
 package hello;
 
 import org.assertj.core.api.BDDAssertions;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +27,7 @@ public class MyAccountApplicationTest {
 		BDDAssertions.then(personResponseEntity.getStatusCodeValue()).isEqualTo(200);
 		BDDAssertions.then(personResponseEntity.getBody().getId()).isEqualTo(1l);
 		BDDAssertions.then(personResponseEntity.getBody().getName()).isEqualTo("foo");
-		BDDAssertions.then(personResponseEntity.getBody().getSurname()).isEqualTo("bee");
+		BDDAssertions.then(personResponseEntity.getBody().getLastName()).isEqualTo("bee");
 		
 	}
 }

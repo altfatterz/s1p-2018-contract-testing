@@ -2,6 +2,7 @@ resources:
 
 - name: source-code
   type: git
+  check_every: 5s
   source:
     uri: https://github.com/altfatterz/s1p-2018-contract-testing.git
     branch: master
@@ -18,25 +19,31 @@ resources:
 
 jobs:
 
-- name: deploy-person-service
+- name: build-person-service
   plan:
   - get: source-code
     trigger: true
   - task: package
     file: source-code/ci/tasks/package-person.yml
+
+- name: deploy-person-service
+  plan:
   - put: pws
     params:
       manifest: source-code/person-service/manifest.yml
       current_app_name: {{PERSON-SERVICE-APP-NAME}}
 
-- name: deploy-myaccount-client
+- name: build-myaccount-client
   plan:
   - get: source-code
     passed:
-    - deploy-person-service
+    - build-person-service
     trigger: true
   - task: package
     file: source-code/ci/tasks/package-myaccount.yml
+
+- name: deploy-myaccount-client
+  plan:
   - put: pws
     params:
       manifest: source-code/myaccount-client/manifest.yml
