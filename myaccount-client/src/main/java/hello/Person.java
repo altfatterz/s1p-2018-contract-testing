@@ -5,17 +5,17 @@ class Person {
 	public Person() {
 	}
 
-	public Person(Long id, String name, String surname) {
+	public Person(Long id, String name, String lastName) {
 		this.id = id;
 		this.name = name;
-		this.surname = surname;
+		this.lastName = lastName;
 	}
 
 	private Long id;
 
 	private String name;
 
-	private String surname;
+	private String lastName;
 
 	public Long getId() {
 		return id;
@@ -33,12 +33,12 @@ class Person {
 		this.name = name;
 	}
 
-	public String getSurname() {
-		return surname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 }
